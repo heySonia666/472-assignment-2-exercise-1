@@ -29,8 +29,8 @@ transform_data <- function(data, transformation_type = "increase_disp") {
     transformed_data$disp <- transformed_data$disp * 2
     
   } else if (transformation_type == "decrease_mpg") {
-    # Decrease the miles per gallon by 20%
-    transformed_data$mpg <- transformed_data$mpg * 0.8
+    # Decrease the miles per gallon by 30%
+    transformed_data$mpg <- transformed_data$mpg * 0.7
     
   } else if (transformation_type == "increase_weight") {
     # Increase the weight by 10%
