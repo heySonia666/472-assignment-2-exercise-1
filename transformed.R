@@ -19,7 +19,7 @@ transform_data <- function(data, transformation_type = "increase_disp") {
     data <- data %>%
       mutate(disp = sqrt(disp))
   } else {
-    stop("Invalid transformation type. Please choose 'double', 'square', or 'root'.")
+    stop("Invalid transformation type. Please choose 'triple', 'double', or 'square'.")
   }
   
   # Return the transformed dataset
