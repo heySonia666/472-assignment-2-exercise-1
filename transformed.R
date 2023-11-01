@@ -1,4 +1,5 @@
 # read and load the dataset "mtcars"
+library(dplyr)
 data("mtcars")
 head(mtcars)
 
@@ -8,8 +9,9 @@ transform_data <- function(data) {
     stop("The dataset must contain an 'disp' column for Displacement.")
   }
   
-  # a function that applies a simple transformation: increasing the Displacement ('disp') of each car by 100%.
-  data$disp <- data$disp * 2
+ # Use mutate to apply the transformation
+  data <- data %>%
+    mutate(disp = disp * 2)
   
   # Return the transformed dataset
   return(data)
