@@ -1,5 +1,5 @@
 library(dplyr)
-transform_data <- function(data, transformation_type = "increase_disp") {
+transform_data <- function(data, transformation_type = "square") {
   # Check if the necessary columns exist in the dataset
   required_columns <- c("disp", "mpg", "wt")
   if (!all(required_columns %in% colnames(data))) {
@@ -11,15 +11,15 @@ transform_data <- function(data, transformation_type = "increase_disp") {
     data <- data %>%
       mutate(disp = disp * 3)
   } else if (transformation_type == "square") {
-    # Increase the Displacement ('disp') of each car by 100%
+    # Square the Displacement ('disp') of each car
     data <- data %>%
       mutate(disp = disp ^ 2)
   } else if (transformation_type == "sqrt") {
-     # Square the Displacement ('disp') of each car
+     # SQRT the Displacement ('disp') of each car
     data <- data %>%
       mutate(disp = sqrt(disp))
   } else {
-    stop("Invalid transformation type. Please choose 'triple', 'double', or 'square'.")
+    stop("Invalid transformation type. Please choose 'triple', 'square', or 'sqrt'.")
   }
   
   # Return the transformed dataset

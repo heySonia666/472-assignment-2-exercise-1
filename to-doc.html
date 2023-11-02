@@ -373,7 +373,7 @@ chunk like this:</p>
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>transform_data &lt;- function(data, transformation_type = &quot;increase_disp&quot;) {
+<pre class="r"><code>transform_data &lt;- function(data, transformation_type = &quot;square&quot;) {
   # Check if the necessary columns exist in the dataset
   required_columns &lt;- c(&quot;disp&quot;, &quot;mpg&quot;, &quot;wt&quot;)
   if (!all(required_columns %in% colnames(data))) {
@@ -385,15 +385,15 @@ chunk like this:</p>
     data &lt;- data %&gt;%
       mutate(disp = disp * 3)
   } else if (transformation_type == &quot;square&quot;) {
-    # Increase the Displacement (&#39;disp&#39;) of each car by 100%
+    # Square the Displacement (&#39;disp&#39;) of each car
     data &lt;- data %&gt;%
       mutate(disp = disp ^ 2)
   } else if (transformation_type == &quot;sqrt&quot;) {
-     # Square the Displacement (&#39;disp&#39;) of each car
+     # SQRT the Displacement (&#39;disp&#39;) of each car
     data &lt;- data %&gt;%
       mutate(disp = sqrt(disp))
   } else {
-    stop(&quot;Invalid transformation type. Please choose &#39;triple&#39;, &#39;double&#39;, or &#39;square&#39;.&quot;)
+    stop(&quot;Invalid transformation type. Please choose &#39;triple&#39;, &#39;square&#39;, or &#39;sqrt&#39;.&quot;)
   }
   
   # Return the transformed dataset
