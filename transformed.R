@@ -10,11 +10,11 @@ transform_data <- function(data, transformation_type = "increase_disp") {
     # Increase the Displacement ('disp') of each car by 200%
     data <- data %>%
       mutate(disp = disp * 3)
-  } else if (transformation_type == "double") {
+  } else if (transformation_type == "square") {
     # Increase the Displacement ('disp') of each car by 100%
     data <- data %>%
       mutate(disp = disp ^ 2)
-  } else if (transformation_type == "square") {
+  } else if (transformation_type == "sqrt") {
      # Square the Displacement ('disp') of each car
     data <- data %>%
       mutate(disp = sqrt(disp))
@@ -30,8 +30,8 @@ transform_data <- function(data, transformation_type = "increase_disp") {
 transformed_data_triple <- transform_data(mtcars, "triple")
 print(transformed_data_triple)
 
-transformed_data_double <- transform_data(mtcars, "double")
-print(transformed_data_double)
-
 transformed_data_square <- transform_data(mtcars, "square")
 print(transformed_data_square)
+
+transformed_data_sqrt <- transform_data(mtcars, "sqrt")
+print(transformed_data_sqrt)
