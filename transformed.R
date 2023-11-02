@@ -1,8 +1,5 @@
 # read and load the dataset "mtcars"
 library(dplyr)
-data("mtcars")
-head(mtcars)
-
 transform_data <- function(data) {
   # Check if the 'disp' column exists in the dataset
   if (!'disp' %in% colnames(data)) {
