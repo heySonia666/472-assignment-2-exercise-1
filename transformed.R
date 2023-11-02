@@ -22,11 +22,13 @@ transform_data <- function(data, transformation_type = "square") {
     stop("Invalid transformation type. Please choose 'triple', 'square', or 'sqrt'.")
   }
   
+
   # Return the transformed dataset
   return(data)
 }
 
 # Example usage with the mtcars dataset
+
 transformed_data_triple <- transform_data(mtcars, "triple")
 print(transformed_data_triple)
 
