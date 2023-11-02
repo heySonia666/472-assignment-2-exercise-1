@@ -27,11 +27,11 @@ transform_data <- function(data, transformation_type = "increase_disp") {
 }
 
 # Example usage with the mtcars dataset
-transformed_data_double <- transform_data(mtcars, "triple")
+transformed_data_triple <- transform_data(mtcars, "triple")
 print(transformed_data_triple)
 
-transformed_data_square <- transform_data(mtcars, "double")
+transformed_data_double <- transform_data(mtcars, "double")
 print(transformed_data_double)
 
-transformed_data_root <- transform_data(mtcars, "square")
+transformed_data_square <- transform_data(mtcars, "square")
 print(transformed_data_square)
